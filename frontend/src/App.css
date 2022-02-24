@@ -1,0 +1,51 @@
+.form_page{
+  width: 60%;
+  margin: auto;
+}
+
+.heading_navbar {
+  background-image: url("https://c4.wallpaperflare.com/wallpaper/185/696/989/dark-blur-abstract-minimalism-wallpaper-preview.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: #ffff;
+  font-family: sans-serif;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 10px 0px 20px 0px;
+  padding: 10px;
+}
+
+button{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: none;
+    color: #ffff;
+    border: none;
+    font-size: 20px;
+    margin-right: 20px;
+    cursor: pointer;
+}
+
+button:hover{
+  color: rgb(181, 57, 219);
+}
+.heading_navbar:hover{
+  color: rgb(57, 146, 219);
+}
+
+.btn_div{
+  display: flex;
+}
+
+a{
+  text-decoration: none;
+}
+p{
+  color: rgb(79, 56, 209);
+}
+.dashboard{
+  width: 95%;
+  margin: auto;
+}

@@ -38,7 +38,7 @@ const login = async (req, res) => {
         let user = await User.findOne({email: req.body.email});
 
         // if not exists we throw an error
-        if(! user) return res.status(400).send({message: "Please check your email and password"});
+        if(! user) return res.status(400).send({message: "Please check your email"});
     
         // if it exists then we match the password
         let match = user.checkPassword(req.body.password);
