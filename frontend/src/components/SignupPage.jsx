@@ -1,8 +1,10 @@
-import { useState } from "react"
+import { useContext, useState } from "react"
 import axios from "axios"
 import { useHistory } from "react-router-dom";
+import { AuthConext } from "../Contexts/AuthContext";
 const SignupPage = () => {
 
+    const { token,role, handleToken, handleRole } = useContext(AuthConext);
     const history = useHistory();
 
 
@@ -29,8 +31,12 @@ const SignupPage = () => {
         const { username, email, role, password } = user;
         if (username, email ,role ,password) {
             axios.post("http://localhost:2022/register", user)
-            .then(res=> console.log(res.data) )
-            .then(res=> history.push("/login"))
+            .then((res)=>{
+                handleToken(res.data.token)
+                handleRole(res.data.user)
+                alert('Registration Successful')
+                history.push("/login")
+            })
             .catch((res)=>alert(res.message))
         } else {
             alert("Invalid")

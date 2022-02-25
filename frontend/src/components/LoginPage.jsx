@@ -34,6 +34,7 @@ const LoginPage = () => {
         if (email ,password) {
             axios.post("http://localhost:2022/login", user)
             .then((res)=>{
+                console.log('Login Success');
                 handleToken(res.data.token)
                 handleRole(res.data.user)
                 history.push("/")
@@ -59,6 +60,7 @@ const LoginPage = () => {
                     </label>
                     <input
                         type="email"
+                        data-testid="input_box1"
                         class="form-control"
                         id="exampleInputEmail1"
                         aria-describedby="emailHelp"
@@ -73,13 +75,16 @@ const LoginPage = () => {
                         Password
                     </label>
                     <input
+                        data-testid="input_box2"
                         type="password"
                         class="form-control"
                         id="exampleInputPassword1"
                         name="password"  value={user.password} onChange={handleChange} 
                     />
                 </div>
-                <button type="submit" onClick={Login} class="btn btn-primary">
+                <button 
+                    data-testid="btn"
+                    type="submit" onClick={Login} class="btn btn-primary">
                     Submit
                 </button>
            
@@ -87,4 +92,6 @@ const LoginPage = () => {
     );
 };
 
-export default LoginPage;
+
+
+export  {LoginPage};
